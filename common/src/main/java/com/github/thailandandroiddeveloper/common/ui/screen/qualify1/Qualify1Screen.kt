@@ -49,27 +49,19 @@ fun Qualify1Screen() {
             TopAppBarComponent()
         },
     ) { innerPadding ->
-        LazyColumn(
+        MainContent(
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .padding(innerPadding),
-        ) {
-            item {
-                MainContent(
-                    modifier =
-                        Modifier
-                            .fillMaxSize()
-                            .wrapContentSize()
-                            .padding(
-                                top = 16.dp,
-                                start = 16.dp,
-                                end = 16.dp,
-                                bottom = 72.dp,
-                            ),
-                )
-            }
-        }
+            Modifier
+                .fillMaxSize()
+                .wrapContentSize()
+                .padding(innerPadding)
+                .padding(
+                    top = 16.dp,
+                    start = 16.dp,
+                    end = 16.dp,
+                    bottom = 72.dp,
+                ),
+        )
     }
 }
 
@@ -117,7 +109,6 @@ fun MainContent(modifier: Modifier = Modifier) {
     }
 }
 
-// Top app bar
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopAppBarComponent() {
