@@ -41,9 +41,9 @@ import com.github.thailandandroiddeveloper.common.ui.theme.AppTheme
 fun Qualify2Screen() {
     // TODO: Qualify2
     Scaffold(
-        containerColor = Color.White,
+        containerColor = MaterialTheme.colorScheme.onPrimary,
         topBar = {
-            TopAppBarComponent(
+            TopAppBar2Component(
                 modifier =
                     Modifier
                         .fillMaxWidth()
@@ -113,7 +113,7 @@ fun TutorialContent(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun TopAppBarComponent(modifier: Modifier = Modifier) {
+fun TopAppBar2Component(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier,
         contentAlignment = Alignment.CenterEnd,
