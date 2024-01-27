@@ -44,7 +44,7 @@ import com.github.thailandandroiddeveloper.common.ui.theme.AppTheme
 fun Qualify1Screen() {
     // TODO: Qualify1
     Scaffold(
-        containerColor = Color.White,
+        containerColor = MaterialTheme.colorScheme.onPrimary,
         topBar = {
             TopAppBar1Component()
         },
