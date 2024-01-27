@@ -199,29 +199,51 @@ fun TopAppBar3Component() {
     )
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ImageGalleryComponent(
     imageList: List<Painter>,
     modifier: Modifier = Modifier,
 ) {
+    var selected by remember { mutableStateOf(List(imageList.size) { false }) }
+    selected =
+        selected.toMutableList().apply {
+            set(0, true)
+        }
+
     LazyRow(
         modifier = modifier,
     ) {
-        items(imageList) {
+        items(imageList) { image ->
+            val index = imageList.indexOf(image)
+
             Card(
                 modifier =
                     Modifier
                         .padding(end = 16.dp)
-                        .width(160.dp),
+                        .width(160.dp)
+                        .combinedClickable(
+                            onClick = {
+                                selected =
+                                    selected.toMutableList().apply {
+                                        set(index, !this[index])
+                                    }
+                            },
+                        ),
                 border =
                     BorderStroke(
-                        width = 2.dp,
-                        color = MaterialTheme.colorScheme.primary,
+                        width = 1.dp,
+                        color =
+                            if (selected[index]) {
+                                MaterialTheme.colorScheme.primary
+                            } else {
+                                MaterialTheme.colorScheme.primaryContainer
+                            },
                     ),
                 shape = RoundedCornerShape(16.dp),
             ) {
                 Image(
-                    painter = it,
+                    painter = imageList[index],
                     contentDescription = "Photo",
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.Crop,
