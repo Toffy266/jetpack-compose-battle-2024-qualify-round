@@ -156,7 +156,7 @@ fun ProfileCardComponent(modifier: Modifier = Modifier) {
                 painterResource(
                     id = R.drawable.img_qualify_1_profile,
                 ),
-            contentDescription = null,
+            contentDescription = "Profile Image",
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop,
         )
