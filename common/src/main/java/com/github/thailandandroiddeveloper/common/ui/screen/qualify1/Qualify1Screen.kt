@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -47,21 +46,21 @@ fun Qualify1Screen() {
     Scaffold(
         containerColor = Color.White,
         topBar = {
-            TopAppBarComponent()
+            TopAppBar1Component()
         },
     ) { innerPadding ->
         MainContent(
             modifier =
-            Modifier
-                .fillMaxSize()
-                .wrapContentSize()
-                .padding(innerPadding)
-                .padding(
-                    top = 16.dp,
-                    start = 16.dp,
-                    end = 16.dp,
-                    bottom = 72.dp,
-                ),
+                Modifier
+                    .fillMaxSize()
+                    .wrapContentSize()
+                    .padding(innerPadding)
+                    .padding(
+                        top = 16.dp,
+                        start = 16.dp,
+                        end = 16.dp,
+                        bottom = 72.dp,
+                    ),
         )
     }
 }
@@ -112,7 +111,7 @@ fun MainContent(modifier: Modifier = Modifier) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopAppBarComponent() {
+fun TopAppBar1Component() {
     CenterAlignedTopAppBar(
         navigationIcon = {
             IconButton(onClick = { /* do something */ }) {
